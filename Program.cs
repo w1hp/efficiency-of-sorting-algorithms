@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int[] arr = Generators.GenerateFewUnique(100, 0, 100);
+Array.Sort(arr);
+foreach (var num in arr)
+{
+    Console.WriteLine(num);
+}
