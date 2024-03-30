@@ -1,16 +1,9 @@
-﻿int[] arr = Generators.GenerateRandom(100, 0, 100);
-//Array.Sort(arr);
-SortingAlgorithms.InsertionSort(arr);
+﻿using BenchmarkDotNet.Running;
 
-foreach (var num in arr)
+class Program
 {
-    Console.WriteLine(num);
+    static void Main(string[] args)
+    {
+        var summary = BenchmarkRunner.Run<Benchmarks>();
+    }
 }
-
-
-
-
-
-
-
-

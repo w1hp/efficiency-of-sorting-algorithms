@@ -1,14 +1,10 @@
-using BenchmarkDotNet.Attributes;
-
 public class SortingAlgorithms
 {
-    [Benchmark]
     public static void QuickSortClassical(int[] array)
     {
         QuickSortClassical(array, 0, array.Length - 1);
     }
 
-    [Benchmark]
     public static void QuickSortClassical(int[] array, int start, int end)
     {
         int _start = start;
@@ -38,8 +34,6 @@ public class SortingAlgorithms
         if (_start < end)
             QuickSortClassical(array, _start, end);
     }
-
-
 
     public static void Merge(int[] array, int left, int middle, int right)
     {
@@ -92,8 +86,10 @@ public class SortingAlgorithms
             k++;
         }
     }
-
-    [Benchmark]
+    public static void MergeSort(int[] array)
+    {
+        MergeSort(array, 0, array.Length - 1);
+    }
     public static void MergeSort(int[] array, int left, int right)
     {
         if (left < right)
@@ -107,7 +103,6 @@ public class SortingAlgorithms
         }
     }
 
-    [Benchmark]
     public static void InsertionSort(int[] array)
     {
         for (int i = 1; i < array.Length; i++)
